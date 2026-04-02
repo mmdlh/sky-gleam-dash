@@ -105,7 +105,7 @@ const RouteManagement = () => (
         title="航线里程分布"
         option={{
           tooltip: { trigger: "item" },
-          radar: { indicator: [{ name: "城区", max: 100 },{ name: "工业", max: 100 },{ name: "河道", max: 100 },{ name: "电力", max: 100 },{ name: "交通", max: 100 },{ name: "山区", max: 100 }], axisName: { color: "rgba(200,225,255,0.85)", fontSize: 11 }, axisLine: { lineStyle: { color: "rgba(0,180,255,0.2)" } }, splitLine: { lineStyle: { color: "rgba(0,180,255,0.1)" } }, splitArea: { areaStyle: { color: ["rgba(0,180,255,0.02)", "rgba(0,180,255,0.06)"] } } },
+          radar: { indicator: [{ name: "城区", max: 100 },{ name: "工业", max: 100 },{ name: "河道", max: 100 },{ name: "电力", max: 100 },{ name: "交通", max: 100 },{ name: "山区", max: 100 }], axisName: { color: "rgba(255,255,255,0.7)", fontSize: 11 }, axisLine: { lineStyle: { color: "rgba(0,180,255,0.2)" } }, splitLine: { lineStyle: { color: "rgba(0,180,255,0.1)" } }, splitArea: { areaStyle: { color: ["rgba(0,180,255,0.02)", "rgba(0,180,255,0.06)"] } } },
           series: [{ type: "radar", data: [{ value: [85,70,55,92,65,40], name: "里程(km)", areaStyle: { color: "rgba(0,180,255,0.15)" }, lineStyle: { color: "#00b4ff" }, itemStyle: { color: "#00b4ff" } }] }],
         }}
       />
