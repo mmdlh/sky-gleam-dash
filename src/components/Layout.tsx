@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import bgHero from "@/assets/bg-hero.jpg";
 import {
   LayoutDashboard, Route, Plane, ClipboardCheck,
-  BarChart3, AlertTriangle, Map, Settings
+  BarChart3, AlertTriangle, Map, Settings, Radar
 } from "lucide-react";
 
 const menuItems = [
