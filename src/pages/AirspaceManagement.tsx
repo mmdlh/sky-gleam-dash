@@ -121,7 +121,7 @@ const AirspaceManagement = () => (
               { value: 10, name: "已拒绝", itemStyle: { color: "#ff6b6b" } },
               { value: 5, name: "已撤回", itemStyle: { color: "#666" } },
             ],
-            label: { color: "rgba(180,210,240,0.8)", fontSize: 11 },
+            label: { color: "rgba(200,225,255,0.9)", fontSize: 11 },
           }],
         }}
       />

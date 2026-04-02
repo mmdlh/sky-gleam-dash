@@ -94,7 +94,7 @@ const SystemSettings = () => (
         title="系统资源使用率（24小时）"
         option={{
           tooltip: { trigger: "axis" },
-          legend: { data: ["CPU","内存","存储","网络I/O"], textStyle: { color: "rgba(180,210,240,0.7)" } },
+          legend: { data: ["CPU","内存","存储","网络I/O"], textStyle: { color: "rgba(200,225,255,0.85)" } },
           grid: { top: 35, bottom: 25, left: 45, right: 15 },
           xAxis: { type: "category", data: ["00:00","04:00","08:00","12:00","16:00","20:00","现在"], axisLine: { lineStyle: { color: "rgba(0,180,255,0.3)" } } },
           yAxis: { type: "value", max: 100, splitLine: { lineStyle: { color: "rgba(0,180,255,0.08)" } } },

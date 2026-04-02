@@ -127,7 +127,7 @@ const AlertCenter = () => (
               { value: 15, name: "空域冲突", itemStyle: { color: "#00e5a0" } },
               { value: 10, name: "其他", itemStyle: { color: "#a78bfa" } },
             ],
-            label: { color: "rgba(180,210,240,0.8)", fontSize: 11 },
+            label: { color: "rgba(200,225,255,0.9)", fontSize: 11 },
           }],
         }}
       />
