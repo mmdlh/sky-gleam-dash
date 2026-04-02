@@ -11,8 +11,8 @@ interface ChartCardProps {
 
 const baseTheme = {
   backgroundColor: "transparent",
-  textStyle: { color: "rgba(200,225,255,0.9)", fontFamily: "Rajdhani" },
-  legend: { textStyle: { color: "rgba(200,225,255,0.85)" } },
+  textStyle: { color: "rgba(255,255,255,0.7)", fontFamily: "Rajdhani" },
+  legend: { textStyle: { color: "rgba(255,255,255,0.7)" } },
 };
 
 const ChartCard = ({ title, option, height = "300px", className = "" }: ChartCardProps) => (
