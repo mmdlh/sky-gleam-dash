@@ -13,6 +13,8 @@ const baseTheme = {
   backgroundColor: "transparent",
   textStyle: { color: "rgba(255,255,255,0.7)", fontFamily: "Rajdhani" },
   legend: { textStyle: { color: "rgba(255,255,255,0.7)" } },
+  xAxis: { axisLabel: { color: "rgba(255,255,255,0.7)" }, nameTextStyle: { color: "rgba(255,255,255,0.7)" } },
+  yAxis: { axisLabel: { color: "rgba(255,255,255,0.7)" }, nameTextStyle: { color: "rgba(255,255,255,0.7)" } },
 };
 
 const ChartCard = ({ title, option, height = "300px", className = "" }: ChartCardProps) => (
