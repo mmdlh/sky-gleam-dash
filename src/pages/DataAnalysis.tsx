@@ -23,7 +23,7 @@ const DataAnalysis = () => (
             ],
             shape: "polygon",
             splitNumber: 4,
-            axisName: { color: "rgba(200,225,255,0.85)", fontSize: 11 },
+            axisName: { color: "rgba(255,255,255,0.7)", fontSize: 11 },
             axisLine: { lineStyle: { color: "rgba(0,180,255,0.2)" } },
             splitLine: { lineStyle: { color: "rgba(0,180,255,0.1)" } },
             splitArea: { areaStyle: { color: ["rgba(0,180,255,0.02)","rgba(0,180,255,0.05)"] } },
@@ -82,7 +82,7 @@ const DataAnalysis = () => (
       height="320px"
       option={{
         tooltip: { trigger: "axis" },
-        legend: { data: ["图像(GB)","点云(GB)","视频(GB)"], textStyle: { color: "rgba(200,225,255,0.85)" } },
+        legend: { data: ["图像(GB)","点云(GB)","视频(GB)"], textStyle: { color: "rgba(255,255,255,0.7)" } },
         grid: { top: 35, bottom: 25, left: 50, right: 15 },
         xAxis: { type: "category", data: ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"], axisLine: { lineStyle: { color: "rgba(0,180,255,0.3)" } } },
         yAxis: { type: "value", name: "GB", splitLine: { lineStyle: { color: "rgba(0,180,255,0.08)" } } },
@@ -105,7 +105,7 @@ const DataAnalysis = () => (
           yAxis: { type: "category", data: ["城区A线","工业B线","河道C线","电力D线","交通E线","水库G线"], axisLine: { lineStyle: { color: "rgba(0,180,255,0.3)" } } },
           xAxis: { type: "value", max: 100, splitLine: { lineStyle: { color: "rgba(0,180,255,0.08)" } } },
           series: [
-            { type: "bar", data: [96,92,78,98,85,88], itemStyle: { color: (p: any) => p.value >= 90 ? "#00e5a0" : p.value >= 80 ? "#00b4ff" : "#ffd93d", borderRadius: [0,4,4,0] }, barWidth: 16, label: { show: true, position: "right", color: "rgba(200,225,255,0.9)", fontSize: 11, formatter: "{c}%" } },
+            { type: "bar", data: [96,92,78,98,85,88], itemStyle: { color: (p: any) => p.value >= 90 ? "#00e5a0" : p.value >= 80 ? "#00b4ff" : "#ffd93d", borderRadius: [0,4,4,0] }, barWidth: 16, label: { show: true, position: "right", color: "rgba(255,255,255,0.7)", fontSize: 11, formatter: "{c}%" } },
           ],
         }}
       />
