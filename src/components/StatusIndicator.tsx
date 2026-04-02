@@ -13,7 +13,7 @@ const colors = {
 const StatusIndicator = ({ status, label }: StatusIndicatorProps) => (
   <div className="flex items-center gap-2">
     <span className={`inline-block w-2.5 h-2.5 rounded-full ${colors[status]}`} />
-    <span className="text-sm font-body text-foreground/80">{label}</span>
+    <span className="text-sm font-body text-foreground/90">{label}</span>
   </div>
 );
 
