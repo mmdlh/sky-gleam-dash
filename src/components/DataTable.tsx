@@ -29,7 +29,7 @@ const DataTable = ({ columns, data, title }: DataTableProps) => (
           {data.map((row, i) => (
             <tr key={i} className="border-b border-border/30 hover:bg-primary/5 transition-colors">
               {columns.map((col) => (
-                <td key={col.key} className="py-2.5 px-3 text-foreground/85">
+                <td key={col.key} className="py-2.5 px-3 text-foreground/90">
                   {row[col.key]}
                 </td>
               ))}
