@@ -156,7 +156,7 @@
   }
 
   .nav-item {
-    @apply relative px-3 py-2 text-sm font-medium transition-all duration-300 cursor-pointer rounded-lg;
+    @apply relative px-5 py-2 text-sm font-medium transition-all duration-300 cursor-pointer rounded-lg;
     color: hsla(var(--foreground) / 0.6);
   }
 
