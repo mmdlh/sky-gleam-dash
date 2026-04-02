@@ -46,7 +46,7 @@ const Dashboard = () => {
                 { value: 15, name: "物流型", itemStyle: { color: "#ff6b6b" } },
                 { value: 10, name: "应急型", itemStyle: { color: "#ffd93d" } },
               ],
-              label: { color: "rgba(180,210,240,0.8)", fontSize: 11 },
+              label: { color: "rgba(200,225,255,0.9)", fontSize: 11 },
             }],
           }}
         />
@@ -69,7 +69,7 @@ const Dashboard = () => {
               ],
               shape: "polygon",
               splitNumber: 4,
-              axisName: { color: "rgba(180,210,240,0.7)", fontSize: 11 },
+              axisName: { color: "rgba(200,225,255,0.85)", fontSize: 11 },
               splitLine: { lineStyle: { color: "rgba(0,180,255,0.15)" } },
               splitArea: { areaStyle: { color: ["rgba(0,180,255,0.02)", "rgba(0,180,255,0.06)"] } },
               axisLine: { lineStyle: { color: "rgba(0,180,255,0.2)" } },
