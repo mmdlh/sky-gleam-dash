@@ -9,43 +9,47 @@ interface ChartCardProps {
   className?: string;
 }
 
-const AXIS_LABEL = { color: "rgba(255,255,255,0.7)" };
-const AXIS_NAME = { color: "rgba(255,255,255,0.7)" };
+const WHITE70 = "rgba(255,255,255,0.7)";
 
-const injectAxisColors = (opt: EChartsOption): EChartsOption => {
-  const patch = (axis: any) => {
-    if (!axis) return axis;
-    if (Array.isArray(axis)) return axis.map(patch);
-    return {
-      ...axis,
-      axisLabel: { ...AXIS_LABEL, ...axis.axisLabel },
-      nameTextStyle: { ...AXIS_NAME, ...axis.nameTextStyle },
-    };
-  };
+const patchAxis = (axis: any) => {
+  if (!axis) return axis;
+  if (Array.isArray(axis)) return axis.map(patchAxis);
   return {
-    ...opt,
-    ...(opt.xAxis ? { xAxis: patch(opt.xAxis) } : {}),
-    ...(opt.yAxis ? { yAxis: patch(opt.yAxis) } : {}),
-    ...(opt.radar ? {
-      radar: {
-        ...(opt.radar as any),
-        axisName: { ...AXIS_LABEL, ...(opt.radar as any).axisName },
-      },
-    } : {}),
+    ...axis,
+    axisLabel: { color: WHITE70, ...axis.axisLabel },
+    nameTextStyle: { color: WHITE70, ...axis.nameTextStyle },
   };
 };
 
-const baseTheme = {
+const buildOption = (option: EChartsOption): EChartsOption => ({
   backgroundColor: "transparent",
-  textStyle: { color: "rgba(255,255,255,0.7)", fontFamily: "Rajdhani" },
-  legend: { textStyle: { color: "rgba(255,255,255,0.7)" } },
-};
+  textStyle: { color: WHITE70, fontFamily: "Rajdhani" },
+  ...option,
+  legend: {
+    ...(option.legend as any),
+    textStyle: { color: WHITE70, ...(option.legend as any)?.textStyle },
+  },
+  ...(option.xAxis ? { xAxis: patchAxis(option.xAxis) } : {}),
+  ...(option.yAxis ? { yAxis: patchAxis(option.yAxis) } : {}),
+  ...(option.radar ? {
+    radar: {
+      ...(option.radar as any),
+      axisName: { color: WHITE70, ...(option.radar as any).axisName },
+    },
+  } : {}),
+  ...(option.series ? {
+    series: (Array.isArray(option.series) ? option.series : [option.series]).map((s: any) => ({
+      ...s,
+      ...(s.type === "pie" ? { label: { color: WHITE70, ...s.label } } : {}),
+    })),
+  } : {}),
+});
 
 const ChartCard = ({ title, option, height = "300px", className = "" }: ChartCardProps) => (
   <GlassCard className={className}>
     <h3 className="font-display text-sm font-semibold text-primary mb-3">{title}</h3>
     <ReactEChartsCore
-      option={{ ...baseTheme, ...injectAxisColors(option) }}
+      option={buildOption(option)}
       style={{ height }}
       opts={{ renderer: "canvas" }}
     />
