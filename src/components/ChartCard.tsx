@@ -11,36 +11,36 @@ interface ChartCardProps {
 
 const WHITE70 = "rgba(255,255,255,0.7)";
 
-const patchAxis = (axis: any) => {
+const patchAxis = (axis: any): any => {
   if (!axis) return axis;
   if (Array.isArray(axis)) return axis.map(patchAxis);
   return {
     ...axis,
-    axisLabel: { color: WHITE70, ...axis.axisLabel },
-    nameTextStyle: { color: WHITE70, ...axis.nameTextStyle },
+    axisLabel: { ...(axis.axisLabel || {}), color: WHITE70 },
+    nameTextStyle: { ...(axis.nameTextStyle || {}), color: WHITE70 },
   };
 };
 
 const buildOption = (option: EChartsOption): EChartsOption => ({
-  backgroundColor: "transparent",
-  textStyle: { color: WHITE70, fontFamily: "Rajdhani" },
   ...option,
+  backgroundColor: "transparent",
+  textStyle: { ...(option.textStyle as any), color: WHITE70, fontFamily: "Rajdhani" },
   legend: {
     ...(option.legend as any),
-    textStyle: { color: WHITE70, ...(option.legend as any)?.textStyle },
+    textStyle: { ...((option.legend as any)?.textStyle || {}), color: WHITE70 },
   },
-  ...(option.xAxis ? { xAxis: patchAxis(option.xAxis) } : {}),
-  ...(option.yAxis ? { yAxis: patchAxis(option.yAxis) } : {}),
+  ...(option.xAxis != null ? { xAxis: patchAxis(option.xAxis) } : {}),
+  ...(option.yAxis != null ? { yAxis: patchAxis(option.yAxis) } : {}),
   ...(option.radar ? {
     radar: {
       ...(option.radar as any),
-      axisName: { color: WHITE70, ...(option.radar as any).axisName },
+      axisName: { ...((option.radar as any).axisName || {}), color: WHITE70 },
     },
   } : {}),
   ...(option.series ? {
     series: (Array.isArray(option.series) ? option.series : [option.series]).map((s: any) => ({
       ...s,
-      ...(s.type === "pie" ? { label: { color: WHITE70, ...s.label } } : {}),
+      ...(s.type === "pie" ? { label: { ...(s.label || {}), color: WHITE70 } } : {}),
     })),
   } : {}),
 });
