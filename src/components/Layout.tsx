@@ -36,9 +36,9 @@ const Layout = ({ children }: { children: ReactNode }) => {
       </div>
 
       <nav className="glass-nav fixed top-0 left-0 right-0 z-50 h-16 flex items-center px-6">
-        <h1 className="font-display text-2xl font-bold tracking-wider text-primary glow-text whitespace-nowrap mr-8 flex items-center gap-2.5">
-          <Radar size={28} />
-          低空巡检管理平台
+        <h1 className="font-display text-2xl font-bold tracking-wider whitespace-nowrap mr-8 flex items-center gap-2.5">
+          <Radar size={28} className="text-primary drop-shadow-[0_0_8px_rgba(0,180,255,0.6)]" />
+          <span className="bg-gradient-to-r from-[#00b4ff] via-[#00e5a0] to-[#00b4ff] bg-clip-text text-transparent drop-shadow-[0_0_12px_rgba(0,180,255,0.5)] bg-[length:200%_auto] animate-[gradient-shift_3s_linear_infinite]">低空巡检管理平台</span>
         </h1>
         <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide">
           {menuItems.map((item) => (
