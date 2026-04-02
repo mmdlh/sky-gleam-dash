@@ -181,6 +181,14 @@
     background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
     border-radius: 1px;
   }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @keyframes shimmer {

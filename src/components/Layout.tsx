@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import bgHero from "@/assets/bg-hero.jpg";
 import {
   LayoutDashboard, Route, Plane, ClipboardCheck,
-  BarChart3, AlertTriangle, Map, Settings
+  BarChart3, AlertTriangle, Map, Settings, Radar
 } from "lucide-react";
 
 const menuItems = [
@@ -36,10 +36,11 @@ const Layout = ({ children }: { children: ReactNode }) => {
       </div>
 
       <nav className="glass-nav fixed top-0 left-0 right-0 z-50 h-16 flex items-center px-6">
-        <h1 className="font-display text-lg font-bold tracking-wider text-primary glow-text whitespace-nowrap mr-8">
+        <h1 className="font-display text-lg font-bold tracking-wider text-primary glow-text whitespace-nowrap mr-8 flex items-center gap-2">
+          <Radar size={22} />
           低空巡检管理平台
         </h1>
-        <div className="flex items-center gap-1 overflow-x-auto">
+        <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide">
           {menuItems.map((item) => (
             <div
               key={item.path}
