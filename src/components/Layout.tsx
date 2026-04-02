@@ -32,7 +32,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
           backgroundAttachment: "fixed",
         }}
       >
-        <div className="absolute inset-0 bg-background/80" />
+        <div className="absolute inset-0 bg-background/60" />
       </div>
 
       <nav className="glass-nav fixed top-0 left-0 right-0 z-50 h-16 flex items-center px-6">
